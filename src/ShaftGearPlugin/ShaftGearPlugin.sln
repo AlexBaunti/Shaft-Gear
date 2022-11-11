@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaftGearPlugin.View", "ShaftGearPlugin.View\ShaftGearPlugin.View.csproj", "{9DB90845-3B9D-4DD2-92D2-04A24517250E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaftGearPlugin.Model", "ShaftGearPlugin.Model\ShaftGearPlugin.Model.csproj", "{28954FFD-9729-41B7-87B7-F1B18D4B769A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{9DB90845-3B9D-4DD2-92D2-04A24517250E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DB90845-3B9D-4DD2-92D2-04A24517250E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DB90845-3B9D-4DD2-92D2-04A24517250E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28954FFD-9729-41B7-87B7-F1B18D4B769A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28954FFD-9729-41B7-87B7-F1B18D4B769A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28954FFD-9729-41B7-87B7-F1B18D4B769A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28954FFD-9729-41B7-87B7-F1B18D4B769A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

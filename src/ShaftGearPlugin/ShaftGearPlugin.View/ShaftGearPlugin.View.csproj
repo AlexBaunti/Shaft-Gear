@@ -79,5 +79,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ShaftGearPlugin.Model\ShaftGearPlugin.Model.csproj">
+      <Project>{28954ffd-9729-41b7-87b7-f1b18d4b769a}</Project>
+      <Name>ShaftGearPlugin.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
