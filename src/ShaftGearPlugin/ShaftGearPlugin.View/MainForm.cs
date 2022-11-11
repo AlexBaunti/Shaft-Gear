@@ -106,6 +106,37 @@ namespace ShaftGearPlugin.View
             TipLength.Text = TipLengthValue.ToString();
         }
 
+        /// <summary>
+        /// Проверяет заполнены ли текстовые поля
+        /// </summary>
+        /// <returns></returns>
+        private bool CheckTextBoxes()
+        {
+            var isError = true;
+            foreach (var item in
+                     TextBoxAndError.Where(item => item.Value != ""))
+            {
+                isError = false;
+                errorProvider.SetError(item.Key, item.Value);
+            }
+            return isError;
+        }
 
+        /// <summary>
+        /// Проверка перед построением модели.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void BuildButton_Click(object sender, EventArgs e)
+        {
+            if (CheckTextBoxes())
+            {
+                // Start Build
+            }
+            else
+            {
+                MessageBox.Show(@"Fill All Required Parameters");
+            }
+        }
     }
 }

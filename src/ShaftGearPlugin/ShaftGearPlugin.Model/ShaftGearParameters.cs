@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ShaftGearPlugin.Model
 {
@@ -14,7 +11,7 @@ namespace ShaftGearPlugin.Model
         private readonly Dictionary<ShaftGearParametersType, ShaftGearParameter> _parameters;
 
         /// <summary>
-        /// Параметры вал-шестерни
+        /// Определение параметров вал-шестерни
         /// </summary>
         public ShaftGearParameters()
         {
@@ -37,7 +34,59 @@ namespace ShaftGearPlugin.Model
         public void SetParameterValue(ShaftGearParametersType type, double value)
         {
             if (!_parameters.TryGetValue(type, out var parameter)) return;
+            CheckDependencies(type, value);
             parameter.Value = value;
+        }
+
+        /// <summary>
+        /// Получает значения параметров.
+        /// </summary>
+        /// <param name="type">Тип параметра</param>
+        /// <returns>Значение параметра</returns>
+        /// <exception cref="Exception">Если параметр не задан</exception>
+        public double GetParameterValue(ShaftGearParametersType type)
+        {
+            if (_parameters.TryGetValue(type, out var parameter))
+            {
+                return parameter.Value;
+            }
+            throw new Exception("Parameter Does Not Exist");
+        }
+
+        /// <summary>
+        /// Проверка зависимых параметров.
+        /// </summary>
+        /// <param name="type">Тип параметра</param>
+        /// <param name="value">Значение параметра</param>
+        /// <exception cref="Exception">If the parameter values ​​are set incorrectly.</exception>
+        private void CheckDependencies(ShaftGearParametersType type, double value)
+        {
+            switch (type)
+            {
+                case ShaftGearParametersType.ConnectorDiameter:
+                    {
+                        _parameters.TryGetValue(ShaftGearParametersType.BaseDiameter, out var parameter);
+                        if (parameter.Value - value < 5)
+                        {
+                            throw new Exception("Connector Diameter Must Be at List 5 Units More Base Diameter");
+                        }
+                        break;
+                    }
+                case ShaftGearParametersType.TipLength:
+                    {
+                        _parameters.TryGetValue(ShaftGearParametersType.TipDiameter, out var parameter);
+                        if (parameter.Value - value < 10)
+                        {
+                            throw new Exception("Tip Length Must Be at Least 10 Units More Tip Diameter");
+                        }
+                        break;
+                    }
+                default:
+                    {
+                        return;
+                    }
+            }
         }
     }
 }
+

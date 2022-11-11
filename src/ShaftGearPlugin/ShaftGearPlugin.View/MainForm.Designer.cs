@@ -122,33 +122,33 @@ namespace ShaftGearPlugin.View
             // TipDiameter
             // 
             this.TipDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.TipDiameter.Location = new System.Drawing.Point(190, 243);
+            this.TipDiameter.Location = new System.Drawing.Point(193, 243);
             this.TipDiameter.Name = "TipDiameter";
-            this.TipDiameter.Size = new System.Drawing.Size(126, 24);
+            this.TipDiameter.Size = new System.Drawing.Size(130, 24);
             this.TipDiameter.TabIndex = 0;
             // 
             // TipLength
             // 
             this.TipLength.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.TipLength.Location = new System.Drawing.Point(190, 203);
+            this.TipLength.Location = new System.Drawing.Point(193, 203);
             this.TipLength.Name = "TipLength";
-            this.TipLength.Size = new System.Drawing.Size(126, 24);
+            this.TipLength.Size = new System.Drawing.Size(130, 24);
             this.TipLength.TabIndex = 0;
             // 
             // BaseDiameter
             // 
             this.BaseDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.BaseDiameter.Location = new System.Drawing.Point(190, 163);
+            this.BaseDiameter.Location = new System.Drawing.Point(193, 163);
             this.BaseDiameter.Name = "BaseDiameter";
-            this.BaseDiameter.Size = new System.Drawing.Size(126, 24);
+            this.BaseDiameter.Size = new System.Drawing.Size(130, 24);
             this.BaseDiameter.TabIndex = 0;
             // 
             // ConnectorDiameter
             // 
             this.ConnectorDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.ConnectorDiameter.Location = new System.Drawing.Point(190, 123);
+            this.ConnectorDiameter.Location = new System.Drawing.Point(193, 123);
             this.ConnectorDiameter.Name = "ConnectorDiameter";
-            this.ConnectorDiameter.Size = new System.Drawing.Size(126, 24);
+            this.ConnectorDiameter.Size = new System.Drawing.Size(130, 24);
             this.ConnectorDiameter.TabIndex = 0;
             // 
             // GearDiameterLabel
@@ -164,9 +164,9 @@ namespace ShaftGearPlugin.View
             // GearDiameter
             // 
             this.GearDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.GearDiameter.Location = new System.Drawing.Point(190, 83);
+            this.GearDiameter.Location = new System.Drawing.Point(193, 83);
             this.GearDiameter.Name = "GearDiameter";
-            this.GearDiameter.Size = new System.Drawing.Size(126, 24);
+            this.GearDiameter.Size = new System.Drawing.Size(130, 24);
             this.GearDiameter.TabIndex = 0;
             // 
             // GearWidthLabel
@@ -182,9 +182,9 @@ namespace ShaftGearPlugin.View
             // GearWidth
             // 
             this.GearWidth.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.GearWidth.Location = new System.Drawing.Point(190, 43);
+            this.GearWidth.Location = new System.Drawing.Point(193, 43);
             this.GearWidth.Name = "GearWidth";
-            this.GearWidth.Size = new System.Drawing.Size(126, 24);
+            this.GearWidth.Size = new System.Drawing.Size(130, 24);
             this.GearWidth.TabIndex = 0;
             // 
             // DefaultParameters
@@ -246,6 +246,7 @@ namespace ShaftGearPlugin.View
             this.BuildButton.TabIndex = 2;
             this.BuildButton.Text = "Build Model";
             this.BuildButton.UseVisualStyleBackColor = false;
+            this.BuildButton.Click += new System.EventHandler(this.BuildButton_Click);
             // 
             // ShaftGearBlueprint
             // 

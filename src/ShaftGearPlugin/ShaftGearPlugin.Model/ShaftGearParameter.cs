@@ -23,7 +23,7 @@ namespace ShaftGearPlugin.Model
             {
                 if (IsRangeOut(value))
                 {
-                    throw new ArgumentException($"Value Can Be Only Between {_minValue} And {_maxValue}");
+                    ///throw new ArgumentException($"Value Can Be Only Between {_minValue} And {_maxValue}");
                 }
                 _value = value;
             }
@@ -42,16 +42,21 @@ namespace ShaftGearPlugin.Model
         /// <summary>
         /// Сборка класса.
         /// </summary>
+        /// <param name="value">Значение параметра.</param>
+        /// <param name="minValue">Минимально допустимое значение.</param>
+        /// <param name="maxValue">Максимально допустимое значение.</param>
         public ShaftGearParameter(double minValue, double value, double maxValue)
         {
+            Value = value;
             _minValue = minValue;
             _maxValue = maxValue;
-            Value = value;
         }
 
         /// <summary>
         /// Проверяет допустимость значения параметра.
         /// </summary>
+        /// <param name="value">Значение параметра</param>
+        /// <returns></returns>
         private bool IsRangeOut(double value)
         {
             return value < _minValue || value > _maxValue;
