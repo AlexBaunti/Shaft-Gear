@@ -291,7 +291,7 @@ namespace ShaftGearPlugin.View
             this.Controls.Add(this.InputParameters);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(1050, 900);
-            this.MinimumSize = new System.Drawing.Size(790, 590);
+            this.MinimumSize = new System.Drawing.Size(790, 600);
             this.Name = "MainForm";
             this.Text = "ShaftGearPlugin";
             this.Load += new System.EventHandler(this.MainForm_Load);
