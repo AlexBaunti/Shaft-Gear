@@ -6,28 +6,28 @@ namespace ShaftGearPlugin.Model
     public class ShaftGearParameters
     {
         /// <summary>
-        /// Типы параметров и их значения
+        /// Типы параметров и их значения.
         /// </summary>
         private readonly Dictionary<ShaftGearParametersType, ShaftGearParameter> _parameters;
 
         /// <summary>
-        /// Определение параметров вал-шестерни
+        /// Определение параметров вал-шестерни.
         /// </summary>
         public ShaftGearParameters()
         {
             _parameters = new Dictionary<ShaftGearParametersType, ShaftGearParameter>()
             {
-                { ShaftGearParametersType.GearWidth, new ShaftGearParameter(70, 145, 200) },
-                { ShaftGearParametersType.GearDiameter, new ShaftGearParameter(70, 95, 120) },
-                { ShaftGearParametersType.ConnectorDiameter, new ShaftGearParameter(85, 97, 110) },
-                { ShaftGearParametersType.BaseDiameter, new ShaftGearParameter(80, 92, 105) },
-                { ShaftGearParametersType.TipDiameter, new ShaftGearParameter(10, 32, 55) },
-                { ShaftGearParametersType.TipLength, new ShaftGearParameter(5, 40, 75) },
+                { ShaftGearParametersType.GearWidth, new ShaftGearParameter(145, 70, 200) },
+                { ShaftGearParametersType.GearDiameter, new ShaftGearParameter(95, 70, 120) },
+                { ShaftGearParametersType.ConnectorDiameter, new ShaftGearParameter(97, 85, 110) },
+                { ShaftGearParametersType.BaseDiameter, new ShaftGearParameter(92, 80, 105) },
+                { ShaftGearParametersType.TipDiameter, new ShaftGearParameter(32, 10, 55) },
+                { ShaftGearParametersType.TipLength, new ShaftGearParameter(40, 5, 75) },
             };
         }
 
         /// <summary>
-        /// Устанавливает значение параметра
+        /// Устанавливает значение параметра.
         /// </summary>
         /// <param name="type"></param>
         /// <param name="value"></param>
@@ -50,7 +50,7 @@ namespace ShaftGearPlugin.Model
             {
                 return parameter.Value;
             }
-            throw new Exception("Parameter Does Not Exist");
+            throw new ArgumentException("Parameter Does Not Exist");
         }
 
         /// <summary>
@@ -66,18 +66,18 @@ namespace ShaftGearPlugin.Model
                 case ShaftGearParametersType.ConnectorDiameter:
                     {
                         _parameters.TryGetValue(ShaftGearParametersType.BaseDiameter, out var parameter);
-                        if (parameter.Value - value < 5)
+                        if (value - parameter.Value < 5)
                         {
-                            throw new Exception("Connector Diameter Must Be at List 5 Units More Base Diameter");
+                            throw new ArgumentException("Connector Diameter Must Be at List 5 Units More Base Diameter");
                         }
                         break;
                     }
                 case ShaftGearParametersType.TipLength:
                     {
                         _parameters.TryGetValue(ShaftGearParametersType.TipDiameter, out var parameter);
-                        if (parameter.Value - value < 10)
+                        if (value - parameter.Value < 8)
                         {
-                            throw new Exception("Tip Length Must Be at Least 10 Units More Tip Diameter");
+                            throw new ArgumentException("Tip Length Must Be at Least 10 Units More Tip Diameter");
                         }
                         break;
                     }

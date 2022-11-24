@@ -19,14 +19,12 @@ namespace ShaftGearPlugin.View
         private readonly Dictionary<TextBox, string> TextBoxAndError;
 
         /// <summary>
-        /// Соответствующий каждому полю параметр
+        /// Соответствующий каждому полю тип параметра.
         /// </summary>
         private readonly Dictionary<TextBox, ShaftGearParametersType> TextBoxToParameterType;
 
         public MainForm()
         {
-            InitializeComponent();
-            
             InitializeComponent();
             Parameters = new ShaftGearParameters();
             TextBoxToParameterType = new Dictionary<TextBox, ShaftGearParametersType>
@@ -69,9 +67,7 @@ namespace ShaftGearPlugin.View
             var textBox = sender as TextBox;
             var isType = TextBoxToParameterType.TryGetValue(textBox, out var type);
             double.TryParse(textBox.Text, out var value);
-
             if (!isType) return;
-
             try
             {
                 Parameters.SetParameterValue(type, value);
@@ -88,18 +84,18 @@ namespace ShaftGearPlugin.View
         /// <summary>
         /// Устанавливает значения по умолчанию
         /// </summary>
-        private void SetDefaultValues(double GearDiameterValue, double GearWidthValue,
+        private void SetDefaultValues(double GearWidthValue, double GearDiameterValue,
             double ConnectorDiameterValue, double BaseDiameterValue, double TipDiameterValue, double TipLengthValue)
         {
-            Parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, GearDiameterValue);
             Parameters.SetParameterValue(ShaftGearParametersType.GearWidth, GearWidthValue);
+            Parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, GearDiameterValue);
             Parameters.SetParameterValue(ShaftGearParametersType.ConnectorDiameter, ConnectorDiameterValue);
             Parameters.SetParameterValue(ShaftGearParametersType.BaseDiameter, BaseDiameterValue);
             Parameters.SetParameterValue(ShaftGearParametersType.TipDiameter, TipDiameterValue);
             Parameters.SetParameterValue(ShaftGearParametersType.TipLength, TipLengthValue);
 
-            GearDiameter.Text = GearDiameterValue.ToString();
             GearWidth.Text = GearWidthValue.ToString();
+            GearDiameter.Text = GearDiameterValue.ToString();
             ConnectorDiameter.Text = ConnectorDiameterValue.ToString();
             BaseDiameter.Text = BaseDiameterValue.ToString();
             TipDiameter.Text = TipDiameterValue.ToString();
@@ -113,8 +109,7 @@ namespace ShaftGearPlugin.View
         private bool CheckTextBoxes()
         {
             var isError = true;
-            foreach (var item in
-                     TextBoxAndError.Where(item => item.Value != ""))
+            foreach (var item in TextBoxAndError.Where(item => item.Value != ""))
             {
                 isError = false;
                 errorProvider.SetError(item.Key, item.Value);
@@ -135,7 +130,7 @@ namespace ShaftGearPlugin.View
             }
             else
             {
-                MessageBox.Show(@"Fill All Required Parameters");
+                MessageBox.Show("Fill All Required Parameters Correctly");
             }
         }
     }
