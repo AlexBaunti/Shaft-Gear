@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 using System.Windows.Forms;
 using ShaftGearPlugin.Model;
 
@@ -22,6 +23,16 @@ namespace ShaftGearPlugin.View
         /// Соответствующий каждому полю тип параметра.
         /// </summary>
         private readonly Dictionary<TextBox, ShaftGearParametersType> TextBoxToParameterType;
+
+        /// <summary>
+        /// Константа для корректного цвета. 
+        /// </summary>
+        private readonly Color _correctColor = Color.White;
+
+        /// <summary>
+        /// Константа для цвета ошибки.
+        /// </summary>
+        private readonly Color _errorColor = Color.LightCoral;
 
         public MainForm()
         {
@@ -48,7 +59,7 @@ namespace ShaftGearPlugin.View
         }
 
         /// <summary>
-        /// Устанавливает значения по умолчанию при загрузке формы
+        /// Устанавливает значения по умолчанию при загрузке формы.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -58,7 +69,7 @@ namespace ShaftGearPlugin.View
         }
 
         /// <summary>
-        /// Устанавливает значения параметров
+        /// Устанавливает значения параметров.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -72,17 +83,19 @@ namespace ShaftGearPlugin.View
             {
                 Parameters.SetParameterValue(type, value);
                 TextBoxAndError[textBox] = "";
+                textBox.BackColor = _correctColor;
                 errorProvider.Clear();
             }
-            catch (Exception error)
+            catch (Exception textBoxError)
             {
-                TextBoxAndError[textBox] = error.Message;
-                errorProvider.SetError(textBox, error.Message);
+                TextBoxAndError[textBox] = textBoxError.Message;
+                textBox.BackColor = _errorColor;
+                errorProvider.SetError(textBox, textBoxError.Message);
             }
         }
 
         /// <summary>
-        /// Устанавливает значения по умолчанию
+        /// Устанавливает значения по умолчанию.
         /// </summary>
         private void SetDefaultValues(double GearWidthValue, double GearDiameterValue,
             double ConnectorDiameterValue, double BaseDiameterValue, double TipDiameterValue, double TipLengthValue)
@@ -100,6 +113,36 @@ namespace ShaftGearPlugin.View
             BaseDiameter.Text = BaseDiameterValue.ToString();
             TipDiameter.Text = TipDiameterValue.ToString();
             TipLength.Text = TipLengthValue.ToString();
+        }
+
+        /// <summary>
+        /// Устанавливает минимальные размеры.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MinSizeButton_Click(object sender, EventArgs e)
+        {
+            SetDefaultValues(70, 70, 85, 80, 8, 16);
+        }
+
+        /// <summary>
+        /// Устанавливает средние размеры.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AvgSizeButton_Click(object sender, EventArgs e)
+        {
+            SetDefaultValues(145, 95, 97, 92, 32, 40);
+        }
+
+        /// <summary>
+        /// Устанавливает максимальные размеры.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void MaxSizeButton_Click(object sender, EventArgs e)
+        {
+            SetDefaultValues(200, 120, 110, 105, 55, 75);
         }
 
         /// <summary>

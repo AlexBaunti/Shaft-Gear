@@ -24,19 +24,6 @@ namespace ShaftGearPlugin.Model
         private readonly double _maxValue;
 
         /// <summary>
-        /// Сборка класса параметра.
-        /// </summary>
-        /// <param name="value">Значение параметра.</param>
-        /// <param name="minValue">Минимально допустимое значение.</param>
-        /// <param name="maxValue">Максимально допустимое значение.</param>
-        public ShaftGearParameter(double value, double minValue, double maxValue)
-        {
-            _value = value;
-            _minValue = minValue;
-            _maxValue = maxValue;
-        }
-
-        /// <summary>
         /// Устанавливает и возвращает значение установленного парамера.
         /// </summary>
         public double Value
@@ -53,13 +40,26 @@ namespace ShaftGearPlugin.Model
         }
 
         /// <summary>
+        /// Сборка класса параметра.
+        /// </summary>
+        /// <param name="value">Значение параметра.</param>
+        /// <param name="minValue">Минимально допустимое значение.</param>
+        /// <param name="maxValue">Максимально допустимое значение.</param>
+        public ShaftGearParameter(double value, double minValue, double maxValue)
+        {
+            _minValue = minValue;
+            _maxValue = maxValue;
+            Value = value;
+        }
+
+        /// <summary>
         /// Проверяет допустимость значения параметра.
         /// </summary>
         /// <param name="value">Значение параметра</param>
         /// <returns></returns>
         private bool IsRangeOut(double value)
         {
-            return _value < _minValue || _value > _maxValue;
+            return value < _minValue || value > _maxValue;
         }
     }
 }

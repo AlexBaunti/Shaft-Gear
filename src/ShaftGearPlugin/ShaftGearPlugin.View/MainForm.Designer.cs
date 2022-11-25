@@ -126,7 +126,7 @@ namespace ShaftGearPlugin.View
             this.TipDiameter.Name = "TipDiameter";
             this.TipDiameter.Size = new System.Drawing.Size(110, 24);
             this.TipDiameter.TabIndex = 0;
-            this.TipDiameter.Leave += new System.EventHandler(this.SetParameter);
+            this.TipDiameter.TextChanged += new System.EventHandler(this.SetParameter);
             // 
             // TipLength
             // 
@@ -135,7 +135,7 @@ namespace ShaftGearPlugin.View
             this.TipLength.Name = "TipLength";
             this.TipLength.Size = new System.Drawing.Size(110, 24);
             this.TipLength.TabIndex = 0;
-            this.TipLength.Leave += new System.EventHandler(this.SetParameter);
+            this.TipLength.TextChanged += new System.EventHandler(this.SetParameter);
             // 
             // BaseDiameter
             // 
@@ -144,7 +144,7 @@ namespace ShaftGearPlugin.View
             this.BaseDiameter.Name = "BaseDiameter";
             this.BaseDiameter.Size = new System.Drawing.Size(110, 24);
             this.BaseDiameter.TabIndex = 0;
-            this.BaseDiameter.Leave += new System.EventHandler(this.SetParameter);
+            this.BaseDiameter.TextChanged += new System.EventHandler(this.SetParameter);
             // 
             // ConnectorDiameter
             // 
@@ -153,7 +153,7 @@ namespace ShaftGearPlugin.View
             this.ConnectorDiameter.Name = "ConnectorDiameter";
             this.ConnectorDiameter.Size = new System.Drawing.Size(110, 24);
             this.ConnectorDiameter.TabIndex = 0;
-            this.ConnectorDiameter.Leave += new System.EventHandler(this.SetParameter);
+            this.ConnectorDiameter.TextChanged += new System.EventHandler(this.SetParameter);
             // 
             // GearDiameterLabel
             // 
@@ -172,7 +172,7 @@ namespace ShaftGearPlugin.View
             this.GearDiameter.Name = "GearDiameter";
             this.GearDiameter.Size = new System.Drawing.Size(110, 24);
             this.GearDiameter.TabIndex = 0;
-            this.GearDiameter.Leave += new System.EventHandler(this.SetParameter);
+            this.GearDiameter.TextChanged += new System.EventHandler(this.SetParameter);
             // 
             // GearWidthLabel
             // 
@@ -191,7 +191,7 @@ namespace ShaftGearPlugin.View
             this.GearWidth.Name = "GearWidth";
             this.GearWidth.Size = new System.Drawing.Size(110, 24);
             this.GearWidth.TabIndex = 0;
-            this.GearWidth.Leave += new System.EventHandler(this.SetParameter);
+            this.GearWidth.TextChanged += new System.EventHandler(this.SetParameter);
             // 
             // DefaultParameters
             // 
@@ -219,6 +219,7 @@ namespace ShaftGearPlugin.View
             this.MaxSizeButton.TabIndex = 0;
             this.MaxSizeButton.Text = "Set Maximum Size";
             this.MaxSizeButton.UseVisualStyleBackColor = false;
+            this.MaxSizeButton.Click += new System.EventHandler(this.MaxSizeButton_Click);
             // 
             // AvgSizeButton
             // 
@@ -232,6 +233,7 @@ namespace ShaftGearPlugin.View
             this.AvgSizeButton.TabIndex = 0;
             this.AvgSizeButton.Text = "Set Average Size";
             this.AvgSizeButton.UseVisualStyleBackColor = false;
+            this.AvgSizeButton.Click += new System.EventHandler(this.AvgSizeButton_Click);
             // 
             // MinSizeButton
             // 
@@ -245,6 +247,7 @@ namespace ShaftGearPlugin.View
             this.MinSizeButton.TabIndex = 0;
             this.MinSizeButton.Text = "Set Minimum Size";
             this.MinSizeButton.UseVisualStyleBackColor = false;
+            this.MinSizeButton.Click += new System.EventHandler(this.MinSizeButton_Click);
             // 
             // BuildButton
             // 
