@@ -68,7 +68,7 @@ namespace ShaftGearPlugin.Model
                         _parameters.TryGetValue(ShaftGearParametersType.BaseDiameter, out var parameter);
                         if (value - parameter.Value < 5)
                         {
-                            throw new ArgumentException("Connector Diameter Must Be at List 5 Units More Base Diameter");
+                            throw new ArgumentException("Connector Diameter Must Be at List 5mm More Base Diameter");
                         }
                         break;
                     }
@@ -77,7 +77,7 @@ namespace ShaftGearPlugin.Model
                         _parameters.TryGetValue(ShaftGearParametersType.TipDiameter, out var parameter);
                         if (value - parameter.Value < 8)
                         {
-                            throw new ArgumentException("Tip Length Must Be at Least 10 Units More Tip Diameter");
+                            throw new ArgumentException("Tip Length Must Be at Least 10mm More Tip Diameter");
                         }
                         break;
                     }
