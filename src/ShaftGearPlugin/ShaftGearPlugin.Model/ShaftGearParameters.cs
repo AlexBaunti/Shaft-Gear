@@ -21,8 +21,8 @@ namespace ShaftGearPlugin.Model
                 { ShaftGearParametersType.GearDiameter, new ShaftGearParameter(95, 70, 120) },
                 { ShaftGearParametersType.ConnectorDiameter, new ShaftGearParameter(97, 85, 110) },
                 { ShaftGearParametersType.BaseDiameter, new ShaftGearParameter(92, 80, 105) },
-                { ShaftGearParametersType.TipDiameter, new ShaftGearParameter(32, 8, 55) },
-                { ShaftGearParametersType.TipLength, new ShaftGearParameter(40, 16, 75) },
+                { ShaftGearParametersType.TipDiameter, new ShaftGearParameter(38, 20, 55) },
+                { ShaftGearParametersType.TipLength, new ShaftGearParameter(50, 30, 75) },
             };
         }
 
@@ -75,9 +75,9 @@ namespace ShaftGearPlugin.Model
                 case ShaftGearParametersType.TipLength:
                     {
                         _parameters.TryGetValue(ShaftGearParametersType.TipDiameter, out var parameter);
-                        if (value - parameter.Value < 8)
+                        if (value - parameter.Value < 10)
                         {
-                            throw new ArgumentException("Tip Length Must Be at Least 8mm More Tip Diameter");
+                            throw new ArgumentException("Tip Length Must Be at Least 10mm More Tip Diameter");
                         }
                         break;
                     }

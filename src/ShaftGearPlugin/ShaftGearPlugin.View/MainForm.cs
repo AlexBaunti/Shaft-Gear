@@ -65,7 +65,7 @@ namespace ShaftGearPlugin.View
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            SetDefaultValues(145, 95, 97, 92, 32, 40);
+            SetDefaultValues(145, 95, 97, 92, 38, 50);
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace ShaftGearPlugin.View
         /// <param name="e"></param>
         private void MinSizeButton_Click(object sender, EventArgs e)
         {
-            SetDefaultValues(70, 70, 85, 80, 8, 16);
+            SetDefaultValues(70, 70, 85, 80, 20, 30);
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace ShaftGearPlugin.View
         /// <param name="e"></param>
         private void AvgSizeButton_Click(object sender, EventArgs e)
         {
-            SetDefaultValues(145, 95, 97, 92, 32, 40);
+            SetDefaultValues(145, 95, 97, 92, 38, 50);
         }
 
         /// <summary>
