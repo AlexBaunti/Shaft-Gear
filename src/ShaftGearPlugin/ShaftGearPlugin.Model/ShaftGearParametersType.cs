@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ShaftGearPlugin.Model
+﻿namespace ShaftGearPlugin.Model
 {
     /// <summary>
     /// Список параметров вал-шестерни

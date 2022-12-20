@@ -4,6 +4,7 @@ using System.Linq;
 using System.Drawing;
 using System.Windows.Forms;
 using ShaftGearPlugin.Model;
+using ShaftGearPlugin.Wrapper;
 
 namespace ShaftGearPlugin.View
 {
@@ -12,17 +13,17 @@ namespace ShaftGearPlugin.View
         /// <summary>
         /// Параметры вал-шестерни.
         /// </summary>
-        private readonly ShaftGearParameters Parameters;
+        private readonly ShaftGearParameters _parameters;
 
         /// <summary>
         /// Текстовые поля и ошибки в них.
         /// </summary>
-        private readonly Dictionary<TextBox, string> TextBoxAndError;
+        private readonly Dictionary<TextBox, string> _textBoxAndError;
 
         /// <summary>
         /// Соответствующий каждому полю тип параметра.
         /// </summary>
-        private readonly Dictionary<TextBox, ShaftGearParametersType> TextBoxToParameterType;
+        private readonly Dictionary<TextBox, ShaftGearParametersType> _textBoxToParameterType;
 
         /// <summary>
         /// Константа для корректного цвета. 
@@ -37,8 +38,8 @@ namespace ShaftGearPlugin.View
         public MainForm()
         {
             InitializeComponent();
-            Parameters = new ShaftGearParameters();
-            TextBoxToParameterType = new Dictionary<TextBox, ShaftGearParametersType>
+            _parameters = new ShaftGearParameters();
+            _textBoxToParameterType = new Dictionary<TextBox, ShaftGearParametersType>
             {
                 { GearWidth, ShaftGearParametersType.GearWidth },
                 { GearDiameter, ShaftGearParametersType.GearDiameter },
@@ -47,7 +48,7 @@ namespace ShaftGearPlugin.View
                 { TipDiameter, ShaftGearParametersType.TipDiameter },
                 { TipLength, ShaftGearParametersType.TipLength }
             };
-            TextBoxAndError = new Dictionary<TextBox, string>
+            _textBoxAndError = new Dictionary<TextBox, string>
             {
                 { GearWidth, "" },
                 { GearDiameter, "" },
@@ -76,19 +77,19 @@ namespace ShaftGearPlugin.View
         private void SetParameter(object sender, EventArgs e)
         {
             var textBox = sender as TextBox;
-            var isType = TextBoxToParameterType.TryGetValue(textBox, out var type);
+            var isType = _textBoxToParameterType.TryGetValue(textBox, out var type);
             double.TryParse(textBox.Text, out var value);
             if (!isType) return;
             try
             {
-                Parameters.SetParameterValue(type, value);
-                TextBoxAndError[textBox] = "";
+                _parameters.SetParameterValue(type, value);
+                _textBoxAndError[textBox] = "";
                 textBox.BackColor = _correctColor;
                 errorProvider.Clear();
             }
             catch (Exception textBoxError)
             {
-                TextBoxAndError[textBox] = textBoxError.Message;
+                _textBoxAndError[textBox] = textBoxError.Message;
                 textBox.BackColor = _errorColor;
                 errorProvider.SetError(textBox, textBoxError.Message);
             }
@@ -100,12 +101,12 @@ namespace ShaftGearPlugin.View
         private void SetDefaultValues(double GearWidthValue, double GearDiameterValue,
             double ConnectorDiameterValue, double BaseDiameterValue, double TipDiameterValue, double TipLengthValue)
         {
-            Parameters.SetParameterValue(ShaftGearParametersType.GearWidth, GearWidthValue);
-            Parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, GearDiameterValue);
-            Parameters.SetParameterValue(ShaftGearParametersType.ConnectorDiameter, ConnectorDiameterValue);
-            Parameters.SetParameterValue(ShaftGearParametersType.BaseDiameter, BaseDiameterValue);
-            Parameters.SetParameterValue(ShaftGearParametersType.TipDiameter, TipDiameterValue);
-            Parameters.SetParameterValue(ShaftGearParametersType.TipLength, TipLengthValue);
+            _parameters.SetParameterValue(ShaftGearParametersType.GearWidth, GearWidthValue);
+            _parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, GearDiameterValue);
+            _parameters.SetParameterValue(ShaftGearParametersType.ConnectorDiameter, ConnectorDiameterValue);
+            _parameters.SetParameterValue(ShaftGearParametersType.BaseDiameter, BaseDiameterValue);
+            _parameters.SetParameterValue(ShaftGearParametersType.TipDiameter, TipDiameterValue);
+            _parameters.SetParameterValue(ShaftGearParametersType.TipLength, TipLengthValue);
 
             GearWidth.Text = GearWidthValue.ToString();
             GearDiameter.Text = GearDiameterValue.ToString();
@@ -152,7 +153,7 @@ namespace ShaftGearPlugin.View
         private bool CheckTextBoxes()
         {
             var isError = true;
-            foreach (var item in TextBoxAndError.Where(item => item.Value != ""))
+            foreach (var item in _textBoxAndError.Where(item => item.Value != ""))
             {
                 isError = false;
                 errorProvider.SetError(item.Key, item.Value);
@@ -169,7 +170,8 @@ namespace ShaftGearPlugin.View
         {
             if (CheckTextBoxes())
             {
-                // Start Build
+                var builder = new ShaftGearBuilder();
+                builder.BuildDetail(_parameters);
             }
             else
             {
