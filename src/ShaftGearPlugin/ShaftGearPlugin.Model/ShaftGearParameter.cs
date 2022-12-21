@@ -2,7 +2,7 @@
 
 namespace ShaftGearPlugin.Model
 {
-    class ShaftGearParameter
+    public class ShaftGearParameter
     {
         /// <summary>
         /// Значение параметра.
@@ -29,7 +29,7 @@ namespace ShaftGearPlugin.Model
             {
                 if (IsRangeOut(value))
                 {
-                    throw new ArgumentException($"Value Can Be Only Between {_minValue} And {_maxValue}");
+                    throw new ArgumentOutOfRangeException($"Value Can Be Only Between {_minValue} And {_maxValue}");
                 }
                 _value = value;
             }
