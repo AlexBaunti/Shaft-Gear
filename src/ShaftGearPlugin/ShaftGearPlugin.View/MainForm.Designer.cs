@@ -195,7 +195,6 @@ namespace ShaftGearPlugin.View
             // TipDiameter
             // 
             this.TipDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.errorProvider.SetIconAlignment(this.TipDiameter, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.TipDiameter.Location = new System.Drawing.Point(225, 205);
             this.TipDiameter.Name = "TipDiameter";
             this.TipDiameter.Size = new System.Drawing.Size(85, 24);
@@ -205,7 +204,6 @@ namespace ShaftGearPlugin.View
             // TipLength
             // 
             this.TipLength.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.errorProvider.SetIconAlignment(this.TipLength, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.TipLength.Location = new System.Drawing.Point(225, 245);
             this.TipLength.Name = "TipLength";
             this.TipLength.Size = new System.Drawing.Size(85, 24);
@@ -215,7 +213,6 @@ namespace ShaftGearPlugin.View
             // BaseDiameter
             // 
             this.BaseDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.errorProvider.SetIconAlignment(this.BaseDiameter, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.BaseDiameter.Location = new System.Drawing.Point(225, 165);
             this.BaseDiameter.Name = "BaseDiameter";
             this.BaseDiameter.Size = new System.Drawing.Size(85, 24);
@@ -225,7 +222,6 @@ namespace ShaftGearPlugin.View
             // ConnectorDiameter
             // 
             this.ConnectorDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.errorProvider.SetIconAlignment(this.ConnectorDiameter, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.ConnectorDiameter.Location = new System.Drawing.Point(225, 125);
             this.ConnectorDiameter.Name = "ConnectorDiameter";
             this.ConnectorDiameter.Size = new System.Drawing.Size(85, 24);
@@ -245,7 +241,6 @@ namespace ShaftGearPlugin.View
             // GearDiameter
             // 
             this.GearDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.errorProvider.SetIconAlignment(this.GearDiameter, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.GearDiameter.Location = new System.Drawing.Point(225, 85);
             this.GearDiameter.Name = "GearDiameter";
             this.GearDiameter.Size = new System.Drawing.Size(85, 24);
@@ -265,7 +260,6 @@ namespace ShaftGearPlugin.View
             // GearWidth
             // 
             this.GearWidth.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.errorProvider.SetIconAlignment(this.GearWidth, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.GearWidth.Location = new System.Drawing.Point(225, 45);
             this.GearWidth.Name = "GearWidth";
             this.GearWidth.Size = new System.Drawing.Size(85, 24);

@@ -103,9 +103,9 @@ namespace ShaftGearPlugin.View
         {
             _parameters.SetParameterValue(ShaftGearParametersType.GearWidth, GearWidthValue);
             _parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, GearDiameterValue);
-            _parameters.SetParameterValue(ShaftGearParametersType.ConnectorDiameter, ConnectorDiameterValue);
+            _parameters.SetDefaultParameterValue(ShaftGearParametersType.ConnectorDiameter, ConnectorDiameterValue);
             _parameters.SetParameterValue(ShaftGearParametersType.BaseDiameter, BaseDiameterValue);
-            _parameters.SetParameterValue(ShaftGearParametersType.TipDiameter, TipDiameterValue);
+            _parameters.SetDefaultParameterValue(ShaftGearParametersType.TipDiameter, TipDiameterValue);
             _parameters.SetParameterValue(ShaftGearParametersType.TipLength, TipLengthValue);
 
             GearWidth.Text = GearWidthValue.ToString();

@@ -39,6 +39,17 @@ namespace ShaftGearPlugin.Model
         }
 
         /// <summary>
+        /// Устанавливает значение параметра по умолчанию.
+        /// </summary>
+        /// <param name="type"></param>
+        /// <param name="value"></param>
+        public void SetDefaultParameterValue(ShaftGearParametersType type, double value)
+        {
+            if (!_parameters.TryGetValue(type, out var parameter)) return;
+            parameter.Value = value;
+        }
+
+        /// <summary>
         /// Получает значения параметров.
         /// </summary>
         /// <param name="type">Тип параметра</param>
