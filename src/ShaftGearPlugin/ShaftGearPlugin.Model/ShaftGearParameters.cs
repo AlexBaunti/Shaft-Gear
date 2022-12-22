@@ -19,8 +19,8 @@ namespace ShaftGearPlugin.Model
             {
                 { ShaftGearParametersType.GearWidth, new ShaftGearParameter(145, 70, 200) },
                 { ShaftGearParametersType.GearDiameter, new ShaftGearParameter(95, 70, 120) },
-                { ShaftGearParametersType.ConnectorDiameter, new ShaftGearParameter(97, 85, 110) },
-                { ShaftGearParametersType.BaseDiameter, new ShaftGearParameter(92, 80, 105) },
+                { ShaftGearParametersType.ConnectorDiameter, new ShaftGearParameter(95, 85, 105) },
+                { ShaftGearParametersType.BaseDiameter, new ShaftGearParameter(90, 80, 100) },
                 { ShaftGearParametersType.TipDiameter, new ShaftGearParameter(38, 20, 55) },
                 { ShaftGearParametersType.TipLength, new ShaftGearParameter(50, 30, 75) },
             };
@@ -43,14 +43,9 @@ namespace ShaftGearPlugin.Model
         /// </summary>
         /// <param name="type">Тип параметра</param>
         /// <returns>Значение параметра</returns>
-        /// <exception cref="Exception">Если параметр не задан</exception>
         public double GetParameterValue(ShaftGearParametersType type)
         {
-            if (_parameters.TryGetValue(type, out var parameter))
-            {
-                return parameter.Value;
-            }
-            throw new ArgumentException("Parameter Does Not Exist");
+                return _parameters[type].Value;
         }
 
         /// <summary>
@@ -63,30 +58,47 @@ namespace ShaftGearPlugin.Model
         {
             switch (type)
             {
+                case ShaftGearParametersType.ConnectorDiameter:
+                {
+                    _parameters.TryGetValue(ShaftGearParametersType.BaseDiameter, out var parameter);
+                    if (value - parameter.Value < 5)
+                    {
+                        throw new ArgumentOutOfRangeException("Connector Diameter Must Be at Least 5mm More Base Diameter");
+                    }
+                    break;
+                }
                 case ShaftGearParametersType.BaseDiameter:
+                {
+                    _parameters.TryGetValue(ShaftGearParametersType.ConnectorDiameter, out var parameter);
+                    if (parameter.Value - value < 5)
                     {
-                        _parameters.TryGetValue(ShaftGearParametersType.ConnectorDiameter, out var parameter);
-                        if (parameter.Value - value < 5)
-                        {
-                            throw new ArgumentException("Connector Diameter Must Be at Least 5mm More Base Diameter");
-                        }
-                        break;
+                        throw new ArgumentOutOfRangeException("Base Diameter Must Be at Least 5mm Less Connector Diameter");
                     }
+                    break;
+                }
+                case ShaftGearParametersType.TipDiameter:
+                {
+                    _parameters.TryGetValue(ShaftGearParametersType.TipLength, out var parameter);
+                    if (parameter.Value - value < 10)
+                    {
+                        throw new ArgumentOutOfRangeException("Tip Diameter Must Be at Least 10mm Less Tip Length");
+                    }
+                    break;
+                }
                 case ShaftGearParametersType.TipLength:
+                {
+                    _parameters.TryGetValue(ShaftGearParametersType.TipDiameter, out var parameter);
+                    if (value - parameter.Value < 10)
                     {
-                        _parameters.TryGetValue(ShaftGearParametersType.TipDiameter, out var parameter);
-                        if (value - parameter.Value < 10)
-                        {
-                            throw new ArgumentException("Tip Length Must Be at Least 10mm More Tip Diameter");
-                        }
-                        break;
+                        throw new ArgumentOutOfRangeException("Tip Length Must Be at Least 10mm More Tip Diameter");
                     }
+                    break;
+                }
                 default:
-                    {
+                {
                         return;
-                    }
+                }
             }
         }
     }
 }
-
