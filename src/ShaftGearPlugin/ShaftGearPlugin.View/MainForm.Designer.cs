@@ -57,6 +57,7 @@ namespace ShaftGearPlugin.View
             this.BuildButton = new System.Windows.Forms.Button();
             this.ShaftGearBlueprint = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ExitButton = new System.Windows.Forms.Button();
             this.InputParameters.SuspendLayout();
             this.DefaultParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShaftGearBlueprint)).BeginInit();
@@ -194,6 +195,7 @@ namespace ShaftGearPlugin.View
             // TipDiameter
             // 
             this.TipDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.errorProvider.SetIconAlignment(this.TipDiameter, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.TipDiameter.Location = new System.Drawing.Point(225, 205);
             this.TipDiameter.Name = "TipDiameter";
             this.TipDiameter.Size = new System.Drawing.Size(85, 24);
@@ -203,6 +205,7 @@ namespace ShaftGearPlugin.View
             // TipLength
             // 
             this.TipLength.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.errorProvider.SetIconAlignment(this.TipLength, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.TipLength.Location = new System.Drawing.Point(225, 245);
             this.TipLength.Name = "TipLength";
             this.TipLength.Size = new System.Drawing.Size(85, 24);
@@ -212,6 +215,7 @@ namespace ShaftGearPlugin.View
             // BaseDiameter
             // 
             this.BaseDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.errorProvider.SetIconAlignment(this.BaseDiameter, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.BaseDiameter.Location = new System.Drawing.Point(225, 165);
             this.BaseDiameter.Name = "BaseDiameter";
             this.BaseDiameter.Size = new System.Drawing.Size(85, 24);
@@ -221,6 +225,7 @@ namespace ShaftGearPlugin.View
             // ConnectorDiameter
             // 
             this.ConnectorDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.errorProvider.SetIconAlignment(this.ConnectorDiameter, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.ConnectorDiameter.Location = new System.Drawing.Point(225, 125);
             this.ConnectorDiameter.Name = "ConnectorDiameter";
             this.ConnectorDiameter.Size = new System.Drawing.Size(85, 24);
@@ -240,6 +245,7 @@ namespace ShaftGearPlugin.View
             // GearDiameter
             // 
             this.GearDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.errorProvider.SetIconAlignment(this.GearDiameter, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.GearDiameter.Location = new System.Drawing.Point(225, 85);
             this.GearDiameter.Name = "GearDiameter";
             this.GearDiameter.Size = new System.Drawing.Size(85, 24);
@@ -259,6 +265,7 @@ namespace ShaftGearPlugin.View
             // GearWidth
             // 
             this.GearWidth.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.errorProvider.SetIconAlignment(this.GearWidth, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this.GearWidth.Location = new System.Drawing.Point(225, 45);
             this.GearWidth.Name = "GearWidth";
             this.GearWidth.Size = new System.Drawing.Size(85, 24);
@@ -329,7 +336,7 @@ namespace ShaftGearPlugin.View
             this.BuildButton.Font = new System.Drawing.Font("Century Gothic", 13F);
             this.BuildButton.Location = new System.Drawing.Point(402, 483);
             this.BuildButton.Name = "BuildButton";
-            this.BuildButton.Size = new System.Drawing.Size(370, 45);
+            this.BuildButton.Size = new System.Drawing.Size(320, 45);
             this.BuildButton.TabIndex = 2;
             this.BuildButton.Text = "Build Model";
             this.BuildButton.UseVisualStyleBackColor = false;
@@ -354,6 +361,22 @@ namespace ShaftGearPlugin.View
             // 
             this.errorProvider.ContainerControl = this;
             // 
+            // ExitButton
+            // 
+            this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExitButton.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.ExitButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ExitButton.BackgroundImage")));
+            this.ExitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ExitButton.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.ExitButton.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ExitButton.Location = new System.Drawing.Point(727, 483);
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.Size = new System.Drawing.Size(45, 45);
+            this.ExitButton.TabIndex = 2;
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -361,6 +384,7 @@ namespace ShaftGearPlugin.View
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.ShaftGearBlueprint);
+            this.Controls.Add(this.ExitButton);
             this.Controls.Add(this.BuildButton);
             this.Controls.Add(this.DefaultParameters);
             this.Controls.Add(this.InputParameters);
@@ -407,6 +431,7 @@ namespace ShaftGearPlugin.View
         private System.Windows.Forms.Label ConnectorDiameterSizeLabel;
         private System.Windows.Forms.Label GearDiameterSizeLabel;
         private System.Windows.Forms.Label GearWidthSizeLabel;
+        private System.Windows.Forms.Button ExitButton;
     }
 }
 

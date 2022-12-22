@@ -147,7 +147,7 @@ namespace ShaftGearPlugin.View
         }
 
         /// <summary>
-        /// Проверяет заполнены ли текстовые поля
+        /// Проверяет заполнены ли текстовые поля.
         /// </summary>
         /// <returns></returns>
         private bool CheckTextBoxes()
@@ -162,7 +162,7 @@ namespace ShaftGearPlugin.View
         }
 
         /// <summary>
-        /// Проверка перед построением модели.
+        /// Кнопка построения модели.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -176,6 +176,24 @@ namespace ShaftGearPlugin.View
             else
             {
                 MessageBox.Show("Fill All Required Parameters Correctly");
+            }
+        }
+
+        /// <summary>
+        /// Кнопка выхода.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ExitButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dialogResult = MessageBox.Show("Close Plugin?", "Exit", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                Close();
+            }
+            else if (dialogResult == DialogResult.No)
+            {
+                return;
             }
         }
     }
