@@ -33,9 +33,8 @@ namespace ShaftGearPlugin.Model
         /// <param name="value"></param>
         public void SetParameterValue(ShaftGearParametersType type, double value)
         {
-            if (!_parameters.TryGetValue(type, out var parameter)) return;
             CheckDependencies(type, value);
-            parameter.Value = value;
+            _parameters[type].Value = value;
         }
 
         /// <summary>
@@ -45,8 +44,7 @@ namespace ShaftGearPlugin.Model
         /// <param name="value"></param>
         public void SetDefaultParameterValue(ShaftGearParametersType type, double value)
         {
-            if (!_parameters.TryGetValue(type, out var parameter)) return;
-            parameter.Value = value;
+            _parameters[type].Value = value;
         }
 
         /// <summary>

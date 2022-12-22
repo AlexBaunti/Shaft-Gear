@@ -15,11 +15,15 @@ namespace ShaftGearPlugin.UnitTests
         [Test(Description = "Positive Setter Test. Dependent Parameter Values.")]
         public void TestSetDependentParameters_CorrectValues()
         {
+            var expectedGearWidth = _parameters.GetParameterValue(ShaftGearParametersType.GearWidth);
+            var expectedGearDiameter = _parameters.GetParameterValue(ShaftGearParametersType.GearDiameter);
             var expectedConnectorDiameter = _parameters.GetParameterValue(ShaftGearParametersType.ConnectorDiameter);
             var expectedBaseDiameter = _parameters.GetParameterValue(ShaftGearParametersType.BaseDiameter);
             var expectedTipDiameter = _parameters.GetParameterValue(ShaftGearParametersType.TipDiameter);
             var expectedTipLength = _parameters.GetParameterValue(ShaftGearParametersType.TipLength);
 
+            _parameters.SetParameterValue(ShaftGearParametersType.GearWidth, expectedGearWidth);
+            _parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, expectedGearDiameter);
             _parameters.SetParameterValue(ShaftGearParametersType.ConnectorDiameter, expectedConnectorDiameter);
             _parameters.SetParameterValue(ShaftGearParametersType.BaseDiameter, expectedBaseDiameter);
             _parameters.SetParameterValue(ShaftGearParametersType.TipDiameter, expectedTipDiameter);
@@ -27,6 +31,10 @@ namespace ShaftGearPlugin.UnitTests
 
             Assert.Multiple(() =>
             {
+                Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.GearWidth),
+                    Is.EqualTo(expectedGearWidth));
+                Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.GearDiameter),
+                    Is.EqualTo(expectedGearDiameter));
                 Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.ConnectorDiameter),
                     Is.EqualTo(expectedConnectorDiameter));
                 Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.BaseDiameter),
@@ -39,13 +47,13 @@ namespace ShaftGearPlugin.UnitTests
         }
 
         [Test(Description = "Positive Setter Test. Dependent Parameter Values.")]
-        public void TestSetParameters_CorrectValues()
+        public void TestSetDefaultParameters_CorrectValues()
         {
             var expectedGearWidth = 145;
             var expectedGearDiameter = 95;
 
-            _parameters.SetParameterValue(ShaftGearParametersType.GearWidth, expectedGearWidth);
-            _parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, expectedGearDiameter);
+            _parameters.SetDefaultParameterValue(ShaftGearParametersType.GearWidth, expectedGearWidth);
+            _parameters.SetDefaultParameterValue(ShaftGearParametersType.GearDiameter, expectedGearDiameter);
 
             Assert.Multiple(() =>
             {

@@ -4,7 +4,8 @@ using ShaftGearPlugin.Model;
 
 namespace ShaftGearPlugin.UnitTests
 {
-    class ShaftGearParameterTest
+    [TestFixture]
+    public class ShaftGearParameterTest
     {
         [Test(Description = "Positive Getter Test.")]
         public void TestValueGet_CorrectValue()
