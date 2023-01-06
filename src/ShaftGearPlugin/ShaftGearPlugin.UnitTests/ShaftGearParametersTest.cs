@@ -1,4 +1,4 @@
-п»їusing System;
+using System;
 using NUnit.Framework;
 using ShaftGearPlugin.Model;
 
@@ -8,7 +8,7 @@ namespace ShaftGearPlugin.UnitTests
     public class ShaftGearParametersTest
     {
         /// <summary>
-        /// ShaftGear parameters.
+        /// Параметры вал-шестерни.
         /// </summary>
         private readonly ShaftGearParameters _parameters = new ShaftGearParameters();
 
