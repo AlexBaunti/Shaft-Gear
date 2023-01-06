@@ -46,7 +46,8 @@ namespace ShaftGearPlugin.View
                 { ConnectorDiameter, ShaftGearParametersType.ConnectorDiameter },
                 { BaseDiameter, ShaftGearParametersType.BaseDiameter },
                 { TipDiameter, ShaftGearParametersType.TipDiameter },
-                { TipLength, ShaftGearParametersType.TipLength }
+                { TipLength, ShaftGearParametersType.TipLength },
+                { RotationAngle, ShaftGearParametersType.RotationAngle }
             };
             _textBoxAndError = new Dictionary<TextBox, string>
             {
@@ -55,7 +56,8 @@ namespace ShaftGearPlugin.View
                 { ConnectorDiameter, "" },
                 { BaseDiameter, "" },
                 { TipDiameter, "" },
-                { TipLength, "" }
+                { TipLength, "" },
+                { RotationAngle, "" }
             };
         }
 
@@ -66,7 +68,7 @@ namespace ShaftGearPlugin.View
         /// <param name="e"></param>
         private void MainForm_Load(object sender, EventArgs e)
         {
-            SetDefaultValues(145, 95, 95, 90, 38, 50);
+            SetDefaultValues(145, 95, 95, 90, 38, 50, 30);
         }
 
         /// <summary>
@@ -99,7 +101,7 @@ namespace ShaftGearPlugin.View
         /// Устанавливает значения по умолчанию.
         /// </summary>
         private void SetDefaultValues(double GearWidthValue, double GearDiameterValue,
-            double ConnectorDiameterValue, double BaseDiameterValue, double TipDiameterValue, double TipLengthValue)
+            double ConnectorDiameterValue, double BaseDiameterValue, double TipDiameterValue, double TipLengthValue, double RotationAngleValue)
         {
             _parameters.SetParameterValue(ShaftGearParametersType.GearWidth, GearWidthValue);
             _parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, GearDiameterValue);
@@ -107,6 +109,7 @@ namespace ShaftGearPlugin.View
             _parameters.SetParameterValue(ShaftGearParametersType.BaseDiameter, BaseDiameterValue);
             _parameters.SetDefaultParameterValue(ShaftGearParametersType.TipDiameter, TipDiameterValue);
             _parameters.SetParameterValue(ShaftGearParametersType.TipLength, TipLengthValue);
+            _parameters.SetParameterValue(ShaftGearParametersType.RotationAngle, RotationAngleValue);
 
             GearWidth.Text = GearWidthValue.ToString();
             GearDiameter.Text = GearDiameterValue.ToString();
@@ -114,6 +117,7 @@ namespace ShaftGearPlugin.View
             BaseDiameter.Text = BaseDiameterValue.ToString();
             TipDiameter.Text = TipDiameterValue.ToString();
             TipLength.Text = TipLengthValue.ToString();
+            RotationAngle.Text = RotationAngleValue.ToString();
         }
 
         /// <summary>
@@ -123,7 +127,7 @@ namespace ShaftGearPlugin.View
         /// <param name="e"></param>
         private void MinSizeButton_Click(object sender, EventArgs e)
         {
-            SetDefaultValues(70, 70, 85, 80, 20, 30);
+            SetDefaultValues(70, 70, 85, 80, 20, 30, 10);
         }
 
         /// <summary>
@@ -133,7 +137,7 @@ namespace ShaftGearPlugin.View
         /// <param name="e"></param>
         private void AvgSizeButton_Click(object sender, EventArgs e)
         {
-            SetDefaultValues(145, 95, 95, 90, 38, 50);
+            SetDefaultValues(145, 95, 95, 90, 38, 50, 30);
         }
 
         /// <summary>
@@ -143,7 +147,7 @@ namespace ShaftGearPlugin.View
         /// <param name="e"></param>
         private void MaxSizeButton_Click(object sender, EventArgs e)
         {
-            SetDefaultValues(200, 120, 105, 100, 55, 75);
+            SetDefaultValues(200, 120, 105, 100, 55, 75, 45);
         }
 
         /// <summary>

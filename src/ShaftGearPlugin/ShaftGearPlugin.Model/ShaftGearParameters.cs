@@ -23,6 +23,7 @@ namespace ShaftGearPlugin.Model
                 { ShaftGearParametersType.BaseDiameter, new ShaftGearParameter(90, 80, 100) },
                 { ShaftGearParametersType.TipDiameter, new ShaftGearParameter(38, 20, 55) },
                 { ShaftGearParametersType.TipLength, new ShaftGearParameter(50, 30, 75) },
+                { ShaftGearParametersType.RotationAngle, new ShaftGearParameter(30, 10, 45) },
             };
         }
 
@@ -54,7 +55,7 @@ namespace ShaftGearPlugin.Model
         /// <returns>Значение параметра</returns>
         public double GetParameterValue(ShaftGearParametersType type)
         {
-                return _parameters[type].Value;
+            return _parameters[type].Value;
         }
 
         /// <summary>

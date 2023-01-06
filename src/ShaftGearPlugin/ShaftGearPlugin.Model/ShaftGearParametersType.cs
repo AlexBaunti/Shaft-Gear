@@ -1,38 +1,43 @@
 ﻿namespace ShaftGearPlugin.Model
 {
     /// <summary>
-    /// Список параметров вал-шестерни
+    /// Список параметров вал-шестерни.
     /// </summary>
     public enum ShaftGearParametersType
     {
         /// <summary>
-        /// Ширина шестерни
+        /// Ширина шестерни.
         /// </summary>
         GearWidth,
 
         /// <summary>
-        /// Диаметер шестерни
+        /// Диаметер шестерни.
         /// </summary>
         GearDiameter,
 
         /// <summary>
-        /// Диаметер соединителя
+        /// Диаметер соединителя.
         /// </summary>
         ConnectorDiameter,
 
         /// <summary>
-        /// Диаметр основания вала
+        /// Диаметр основания вала.
         /// </summary>
         BaseDiameter,
 
         /// <summary>
-        /// Диаметр вращательного цилиндра вала
+        /// Диаметр вращательного цилиндра вала.
         /// </summary>
         TipDiameter,
 
         /// <summary>
-        /// Длина вращательного цилиндра вала
+        /// Длина вращательного цилиндра вала.
         /// </summary>
-        TipLength
+        TipLength,
+
+        /// <summary>
+        /// Угол вращения шестерни.
+        /// </summary>
+        RotationAngle
     }
 }

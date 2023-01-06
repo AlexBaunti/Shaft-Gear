@@ -58,6 +58,9 @@ namespace ShaftGearPlugin.View
             this.ShaftGearBlueprint = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ExitButton = new System.Windows.Forms.Button();
+            this.RotationAngleLabel = new System.Windows.Forms.Label();
+            this.RotationAngle = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.InputParameters.SuspendLayout();
             this.DefaultParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShaftGearBlueprint)).BeginInit();
@@ -66,6 +69,8 @@ namespace ShaftGearPlugin.View
             // 
             // InputParameters
             // 
+            this.InputParameters.Controls.Add(this.RotationAngleLabel);
+            this.InputParameters.Controls.Add(this.label1);
             this.InputParameters.Controls.Add(this.TipLengthSizeLabel);
             this.InputParameters.Controls.Add(this.TipDiameterSizeLabel);
             this.InputParameters.Controls.Add(this.BaseDiameterSizeLabel);
@@ -77,6 +82,7 @@ namespace ShaftGearPlugin.View
             this.InputParameters.Controls.Add(this.BaseDiameterLabel);
             this.InputParameters.Controls.Add(this.ConnectorDiameterLabel);
             this.InputParameters.Controls.Add(this.TipDiameter);
+            this.InputParameters.Controls.Add(this.RotationAngle);
             this.InputParameters.Controls.Add(this.TipLength);
             this.InputParameters.Controls.Add(this.BaseDiameter);
             this.InputParameters.Controls.Add(this.ConnectorDiameter);
@@ -96,7 +102,7 @@ namespace ShaftGearPlugin.View
             // 
             this.TipLengthSizeLabel.AutoSize = true;
             this.TipLengthSizeLabel.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.TipLengthSizeLabel.Location = new System.Drawing.Point(322, 250);
+            this.TipLengthSizeLabel.Location = new System.Drawing.Point(322, 235);
             this.TipLengthSizeLabel.Name = "TipLengthSizeLabel";
             this.TipLengthSizeLabel.Size = new System.Drawing.Size(40, 15);
             this.TipLengthSizeLabel.TabIndex = 2;
@@ -106,7 +112,7 @@ namespace ShaftGearPlugin.View
             // 
             this.TipDiameterSizeLabel.AutoSize = true;
             this.TipDiameterSizeLabel.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.TipDiameterSizeLabel.Location = new System.Drawing.Point(322, 210);
+            this.TipDiameterSizeLabel.Location = new System.Drawing.Point(322, 195);
             this.TipDiameterSizeLabel.Name = "TipDiameterSizeLabel";
             this.TipDiameterSizeLabel.Size = new System.Drawing.Size(40, 15);
             this.TipDiameterSizeLabel.TabIndex = 2;
@@ -116,7 +122,7 @@ namespace ShaftGearPlugin.View
             // 
             this.BaseDiameterSizeLabel.AutoSize = true;
             this.BaseDiameterSizeLabel.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.BaseDiameterSizeLabel.Location = new System.Drawing.Point(316, 171);
+            this.BaseDiameterSizeLabel.Location = new System.Drawing.Point(316, 155);
             this.BaseDiameterSizeLabel.Name = "BaseDiameterSizeLabel";
             this.BaseDiameterSizeLabel.Size = new System.Drawing.Size(46, 15);
             this.BaseDiameterSizeLabel.TabIndex = 2;
@@ -126,7 +132,7 @@ namespace ShaftGearPlugin.View
             // 
             this.ConnectorDiameterSizeLabel.AutoSize = true;
             this.ConnectorDiameterSizeLabel.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.ConnectorDiameterSizeLabel.Location = new System.Drawing.Point(316, 130);
+            this.ConnectorDiameterSizeLabel.Location = new System.Drawing.Point(316, 115);
             this.ConnectorDiameterSizeLabel.Name = "ConnectorDiameterSizeLabel";
             this.ConnectorDiameterSizeLabel.Size = new System.Drawing.Size(46, 15);
             this.ConnectorDiameterSizeLabel.TabIndex = 2;
@@ -136,7 +142,7 @@ namespace ShaftGearPlugin.View
             // 
             this.GearDiameterSizeLabel.AutoSize = true;
             this.GearDiameterSizeLabel.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.GearDiameterSizeLabel.Location = new System.Drawing.Point(316, 90);
+            this.GearDiameterSizeLabel.Location = new System.Drawing.Point(316, 75);
             this.GearDiameterSizeLabel.Name = "GearDiameterSizeLabel";
             this.GearDiameterSizeLabel.Size = new System.Drawing.Size(46, 15);
             this.GearDiameterSizeLabel.TabIndex = 2;
@@ -146,7 +152,7 @@ namespace ShaftGearPlugin.View
             // 
             this.GearWidthSizeLabel.AutoSize = true;
             this.GearWidthSizeLabel.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.GearWidthSizeLabel.Location = new System.Drawing.Point(316, 50);
+            this.GearWidthSizeLabel.Location = new System.Drawing.Point(316, 35);
             this.GearWidthSizeLabel.Name = "GearWidthSizeLabel";
             this.GearWidthSizeLabel.Size = new System.Drawing.Size(46, 15);
             this.GearWidthSizeLabel.TabIndex = 2;
@@ -156,7 +162,7 @@ namespace ShaftGearPlugin.View
             // 
             this.TipDiameterLabel.AutoSize = true;
             this.TipDiameterLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.TipDiameterLabel.Location = new System.Drawing.Point(20, 205);
+            this.TipDiameterLabel.Location = new System.Drawing.Point(20, 190);
             this.TipDiameterLabel.Name = "TipDiameterLabel";
             this.TipDiameterLabel.Size = new System.Drawing.Size(171, 20);
             this.TipDiameterLabel.TabIndex = 1;
@@ -166,7 +172,7 @@ namespace ShaftGearPlugin.View
             // 
             this.TipLengthLabel.AutoSize = true;
             this.TipLengthLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.TipLengthLabel.Location = new System.Drawing.Point(20, 245);
+            this.TipLengthLabel.Location = new System.Drawing.Point(20, 230);
             this.TipLengthLabel.Name = "TipLengthLabel";
             this.TipLengthLabel.Size = new System.Drawing.Size(150, 20);
             this.TipLengthLabel.TabIndex = 1;
@@ -176,7 +182,7 @@ namespace ShaftGearPlugin.View
             // 
             this.BaseDiameterLabel.AutoSize = true;
             this.BaseDiameterLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.BaseDiameterLabel.Location = new System.Drawing.Point(20, 165);
+            this.BaseDiameterLabel.Location = new System.Drawing.Point(20, 150);
             this.BaseDiameterLabel.Name = "BaseDiameterLabel";
             this.BaseDiameterLabel.Size = new System.Drawing.Size(188, 20);
             this.BaseDiameterLabel.TabIndex = 1;
@@ -186,7 +192,7 @@ namespace ShaftGearPlugin.View
             // 
             this.ConnectorDiameterLabel.AutoSize = true;
             this.ConnectorDiameterLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.ConnectorDiameterLabel.Location = new System.Drawing.Point(20, 125);
+            this.ConnectorDiameterLabel.Location = new System.Drawing.Point(20, 110);
             this.ConnectorDiameterLabel.Name = "ConnectorDiameterLabel";
             this.ConnectorDiameterLabel.Size = new System.Drawing.Size(193, 20);
             this.ConnectorDiameterLabel.TabIndex = 1;
@@ -195,7 +201,7 @@ namespace ShaftGearPlugin.View
             // TipDiameter
             // 
             this.TipDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.TipDiameter.Location = new System.Drawing.Point(225, 205);
+            this.TipDiameter.Location = new System.Drawing.Point(225, 190);
             this.TipDiameter.Name = "TipDiameter";
             this.TipDiameter.Size = new System.Drawing.Size(85, 24);
             this.TipDiameter.TabIndex = 0;
@@ -204,7 +210,7 @@ namespace ShaftGearPlugin.View
             // TipLength
             // 
             this.TipLength.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.TipLength.Location = new System.Drawing.Point(225, 245);
+            this.TipLength.Location = new System.Drawing.Point(225, 230);
             this.TipLength.Name = "TipLength";
             this.TipLength.Size = new System.Drawing.Size(85, 24);
             this.TipLength.TabIndex = 0;
@@ -213,7 +219,7 @@ namespace ShaftGearPlugin.View
             // BaseDiameter
             // 
             this.BaseDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.BaseDiameter.Location = new System.Drawing.Point(225, 165);
+            this.BaseDiameter.Location = new System.Drawing.Point(225, 150);
             this.BaseDiameter.Name = "BaseDiameter";
             this.BaseDiameter.Size = new System.Drawing.Size(85, 24);
             this.BaseDiameter.TabIndex = 0;
@@ -222,7 +228,7 @@ namespace ShaftGearPlugin.View
             // ConnectorDiameter
             // 
             this.ConnectorDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.ConnectorDiameter.Location = new System.Drawing.Point(225, 125);
+            this.ConnectorDiameter.Location = new System.Drawing.Point(225, 110);
             this.ConnectorDiameter.Name = "ConnectorDiameter";
             this.ConnectorDiameter.Size = new System.Drawing.Size(85, 24);
             this.ConnectorDiameter.TabIndex = 0;
@@ -232,7 +238,7 @@ namespace ShaftGearPlugin.View
             // 
             this.GearDiameterLabel.AutoSize = true;
             this.GearDiameterLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.GearDiameterLabel.Location = new System.Drawing.Point(20, 85);
+            this.GearDiameterLabel.Location = new System.Drawing.Point(20, 70);
             this.GearDiameterLabel.Name = "GearDiameterLabel";
             this.GearDiameterLabel.Size = new System.Drawing.Size(151, 20);
             this.GearDiameterLabel.TabIndex = 1;
@@ -241,7 +247,7 @@ namespace ShaftGearPlugin.View
             // GearDiameter
             // 
             this.GearDiameter.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.GearDiameter.Location = new System.Drawing.Point(225, 85);
+            this.GearDiameter.Location = new System.Drawing.Point(225, 70);
             this.GearDiameter.Name = "GearDiameter";
             this.GearDiameter.Size = new System.Drawing.Size(85, 24);
             this.GearDiameter.TabIndex = 0;
@@ -251,7 +257,7 @@ namespace ShaftGearPlugin.View
             // 
             this.GearWidthLabel.AutoSize = true;
             this.GearWidthLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.GearWidthLabel.Location = new System.Drawing.Point(20, 45);
+            this.GearWidthLabel.Location = new System.Drawing.Point(20, 30);
             this.GearWidthLabel.Name = "GearWidthLabel";
             this.GearWidthLabel.Size = new System.Drawing.Size(130, 20);
             this.GearWidthLabel.TabIndex = 1;
@@ -260,7 +266,7 @@ namespace ShaftGearPlugin.View
             // GearWidth
             // 
             this.GearWidth.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.GearWidth.Location = new System.Drawing.Point(225, 45);
+            this.GearWidth.Location = new System.Drawing.Point(225, 30);
             this.GearWidth.Name = "GearWidth";
             this.GearWidth.Size = new System.Drawing.Size(85, 24);
             this.GearWidth.TabIndex = 0;
@@ -371,6 +377,35 @@ namespace ShaftGearPlugin.View
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
+            // RotationAngleLabel
+            // 
+            this.RotationAngleLabel.AutoSize = true;
+            this.RotationAngleLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.RotationAngleLabel.Location = new System.Drawing.Point(20, 270);
+            this.RotationAngleLabel.Name = "RotationAngleLabel";
+            this.RotationAngleLabel.Size = new System.Drawing.Size(159, 20);
+            this.RotationAngleLabel.TabIndex = 3;
+            this.RotationAngleLabel.Text = "Gear Rotation Angle";
+            // 
+            // RotationAngle
+            // 
+            this.RotationAngle.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.RotationAngle.Location = new System.Drawing.Point(225, 270);
+            this.RotationAngle.Name = "RotationAngle";
+            this.RotationAngle.Size = new System.Drawing.Size(85, 24);
+            this.RotationAngle.TabIndex = 0;
+            this.RotationAngle.TextChanged += new System.EventHandler(this.SetParameter);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.label1.Location = new System.Drawing.Point(322, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "10 - 45";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -426,6 +461,9 @@ namespace ShaftGearPlugin.View
         private System.Windows.Forms.Label GearDiameterSizeLabel;
         private System.Windows.Forms.Label GearWidthSizeLabel;
         private System.Windows.Forms.Button ExitButton;
+        private System.Windows.Forms.Label RotationAngleLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox RotationAngle;
     }
 }
 

@@ -33,7 +33,9 @@ namespace ShaftGearPlugin.Wrapper
                 parameters.GetParameterValue(ShaftGearParametersType.TipDiameter);
             var tipLength =
                 parameters.GetParameterValue(ShaftGearParametersType.TipLength);
-            BuildGear(gearDiameter, gearWidth);
+            var rotationAngle =
+                parameters.GetParameterValue(ShaftGearParametersType.RotationAngle);
+            BuildGear(gearDiameter, gearWidth, rotationAngle);
             BuildShaft(connectorDiameter, baseDiameter,
                 tipDiameter, tipLength);
         }
@@ -43,7 +45,7 @@ namespace ShaftGearPlugin.Wrapper
         /// </summary>
         /// <param name="gearDiameter">Диаметр шестерни.</param>
         /// <param name="gearWidth">Ширина шестерни.</param>
-        private void BuildGear(double gearDiameter, double gearWidth)
+        private void BuildGear(double gearDiameter, double gearWidth, double rotationAngle)
         {
             // Построение смещенных плоскостей.
 
@@ -54,6 +56,7 @@ namespace ShaftGearPlugin.Wrapper
             // Координаты точек зубца шестерни.
             // 0 элемент - координата по X;
             // 1 элемент - координата по Y;
+
             double[,] points =
             {
                 { -8.096194, 19.545942 },
@@ -69,16 +72,15 @@ namespace ShaftGearPlugin.Wrapper
 
             // Построение среднего эскиза шестерни. 
 
-            points = MatricesWorking.RotatePoint(points, 15);
+            points = MatricesWorking.RotatePoint(points, rotationAngle / 2);
             points = MatricesWorking.ChangeScale(points, 1.4);
             _wrapper.CreatePolyline(points, gearWidth / 2);
 
             // Построение большего эскиза шестерни.
 
-            points = MatricesWorking.RotatePoint(points, 20);
+            points = MatricesWorking.RotatePoint(points, rotationAngle / 2);
             points = MatricesWorking.ChangeScale(points, 1.4);
             _wrapper.CreatePolyline(points, 0);
-
             _wrapper.ExtrudeBySections();
         }
 
