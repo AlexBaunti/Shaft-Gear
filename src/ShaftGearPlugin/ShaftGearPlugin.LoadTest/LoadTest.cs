@@ -1,25 +1,25 @@
-п»їusing System;
+using System;
 using System.IO;
 using System.Diagnostics;
 using System.Linq;
 using ShaftGearPlugin.Model;
 using ShaftGearPlugin.Wrapper;
 
-namespace ShaftGearPlugin.StressTest
+namespace ShaftGearPlugin.LoadTest
 {
     /// <summary>
-    /// РљР»Р°СЃСЃ СЃС‚СЂРµСЃСЃ С‚РµСЃС‚Р°.
+    /// Класс нагрузочного теста.
     /// </summary>
-    class StressTestProgram
+    class LoadTestProgram
     {
         /// <summary>
-        /// Р“Р»Р°РІРЅС‹Р№ РјРµС‚РѕРґ РєР»Р°СЃСЃР° РґР»СЏ Р·Р°РіСЂСѓР·РѕС‡РЅРѕРіРѕ С‚РµСЃС‚РёСЂРѕРІР°РЅРёСЏ.
+        /// Главный метод класса для нагрузочного тестирования.
         /// </summary>
         private static void Main()
         {
             var shaftGearBuilder = new ShaftGearBuilder();
             var shaftGearParameters = new ShaftGearParameters();
-            var streamWriter = new StreamWriter($"StressTest.txt", true);
+            var streamWriter = new StreamWriter($"LoadTestLog.txt", true);
 
 
             long modelCounter = 0;
@@ -48,9 +48,5 @@ namespace ShaftGearPlugin.StressTest
             }
             while (modelCounter != 50);
         }
-    }    
+    }
 }
-
-
-
-
