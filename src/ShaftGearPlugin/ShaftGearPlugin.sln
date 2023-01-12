@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaftGearPlugin.Wrapper", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShaftGearPlugin.UnitTests", "ShaftGearPlugin.UnitTests\ShaftGearPlugin.UnitTests.csproj", "{018ABDBF-9890-45DD-8081-1687B0D4DACC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaftGearPlugin.LoadTest", "ShaftGearPlugin.LoadTest\ShaftGearPlugin.LoadTest.csproj", "{03794B0B-A06A-4C95-8A51-9460EA34370C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{018ABDBF-9890-45DD-8081-1687B0D4DACC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{018ABDBF-9890-45DD-8081-1687B0D4DACC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{018ABDBF-9890-45DD-8081-1687B0D4DACC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03794B0B-A06A-4C95-8A51-9460EA34370C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03794B0B-A06A-4C95-8A51-9460EA34370C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03794B0B-A06A-4C95-8A51-9460EA34370C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03794B0B-A06A-4C95-8A51-9460EA34370C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
