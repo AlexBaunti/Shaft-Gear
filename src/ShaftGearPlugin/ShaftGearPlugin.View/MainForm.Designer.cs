@@ -32,6 +32,8 @@ namespace ShaftGearPlugin.View
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.InputParameters = new System.Windows.Forms.GroupBox();
+            this.RotationAngleLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TipLengthSizeLabel = new System.Windows.Forms.Label();
             this.TipDiameterSizeLabel = new System.Windows.Forms.Label();
             this.BaseDiameterSizeLabel = new System.Windows.Forms.Label();
@@ -43,6 +45,7 @@ namespace ShaftGearPlugin.View
             this.BaseDiameterLabel = new System.Windows.Forms.Label();
             this.ConnectorDiameterLabel = new System.Windows.Forms.Label();
             this.TipDiameter = new System.Windows.Forms.TextBox();
+            this.RotationAngle = new System.Windows.Forms.TextBox();
             this.TipLength = new System.Windows.Forms.TextBox();
             this.BaseDiameter = new System.Windows.Forms.TextBox();
             this.ConnectorDiameter = new System.Windows.Forms.TextBox();
@@ -58,9 +61,6 @@ namespace ShaftGearPlugin.View
             this.ShaftGearBlueprint = new System.Windows.Forms.PictureBox();
             this.errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.ExitButton = new System.Windows.Forms.Button();
-            this.RotationAngleLabel = new System.Windows.Forms.Label();
-            this.RotationAngle = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.InputParameters.SuspendLayout();
             this.DefaultParameters.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ShaftGearBlueprint)).BeginInit();
@@ -97,6 +97,26 @@ namespace ShaftGearPlugin.View
             this.InputParameters.TabIndex = 0;
             this.InputParameters.TabStop = false;
             this.InputParameters.Text = "Input Parameters";
+            // 
+            // RotationAngleLabel
+            // 
+            this.RotationAngleLabel.AutoSize = true;
+            this.RotationAngleLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
+            this.RotationAngleLabel.Location = new System.Drawing.Point(20, 270);
+            this.RotationAngleLabel.Name = "RotationAngleLabel";
+            this.RotationAngleLabel.Size = new System.Drawing.Size(159, 20);
+            this.RotationAngleLabel.TabIndex = 3;
+            this.RotationAngleLabel.Text = "Gear Rotation Angle";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 7F);
+            this.label1.Location = new System.Drawing.Point(322, 275);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "10 - 45";
             // 
             // TipLengthSizeLabel
             // 
@@ -206,6 +226,15 @@ namespace ShaftGearPlugin.View
             this.TipDiameter.Size = new System.Drawing.Size(85, 24);
             this.TipDiameter.TabIndex = 0;
             this.TipDiameter.TextChanged += new System.EventHandler(this.SetParameter);
+            // 
+            // RotationAngle
+            // 
+            this.RotationAngle.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.RotationAngle.Location = new System.Drawing.Point(225, 270);
+            this.RotationAngle.Name = "RotationAngle";
+            this.RotationAngle.Size = new System.Drawing.Size(85, 24);
+            this.RotationAngle.TabIndex = 0;
+            this.RotationAngle.TextChanged += new System.EventHandler(this.SetParameter);
             // 
             // TipLength
             // 
@@ -363,8 +392,7 @@ namespace ShaftGearPlugin.View
             // 
             // ExitButton
             // 
-            this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.ExitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ExitButton.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ExitButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ExitButton.BackgroundImage")));
             this.ExitButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -376,35 +404,6 @@ namespace ShaftGearPlugin.View
             this.ExitButton.TabIndex = 2;
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
-            // 
-            // RotationAngleLabel
-            // 
-            this.RotationAngleLabel.AutoSize = true;
-            this.RotationAngleLabel.Font = new System.Drawing.Font("Century Gothic", 11F);
-            this.RotationAngleLabel.Location = new System.Drawing.Point(20, 270);
-            this.RotationAngleLabel.Name = "RotationAngleLabel";
-            this.RotationAngleLabel.Size = new System.Drawing.Size(159, 20);
-            this.RotationAngleLabel.TabIndex = 3;
-            this.RotationAngleLabel.Text = "Gear Rotation Angle";
-            // 
-            // RotationAngle
-            // 
-            this.RotationAngle.Font = new System.Drawing.Font("Century Gothic", 10F);
-            this.RotationAngle.Location = new System.Drawing.Point(225, 270);
-            this.RotationAngle.Name = "RotationAngle";
-            this.RotationAngle.Size = new System.Drawing.Size(85, 24);
-            this.RotationAngle.TabIndex = 0;
-            this.RotationAngle.TextChanged += new System.EventHandler(this.SetParameter);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 7F);
-            this.label1.Location = new System.Drawing.Point(322, 275);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "10 - 45";
             // 
             // MainForm
             // 

@@ -24,7 +24,7 @@ namespace ShaftGearPlugin.LoadTest
             var modelCounter = 0;
             var computerInfo = new ComputerInfo();
             ulong usedMemory = 0;
-            while (usedMemory * 0.96 <= computerInfo.TotalPhysicalMemory)
+            while (usedMemory * 0.97 <= computerInfo.TotalPhysicalMemory)
             {
                 shaftGearBuilder.BuildDetail(shaftGearParameters);
                 usedMemory = (computerInfo.TotalPhysicalMemory - computerInfo.AvailablePhysicalMemory);
