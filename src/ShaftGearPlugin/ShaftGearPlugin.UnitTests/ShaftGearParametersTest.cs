@@ -7,6 +7,7 @@ namespace ShaftGearPlugin.UnitTests
     [TestFixture]
     public class ShaftGearParametersTest
     {
+        //TODO: убрать
         /// <summary>
         /// Параметры вал-шестерни.
         /// </summary>
@@ -82,6 +83,7 @@ namespace ShaftGearPlugin.UnitTests
 
             Assert.Multiple(() =>
             {
+                //TODO: RSDN
                 Assert.That(actualConnectorDiameterException?.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));
                 Assert.That(actualBaseDiameterException?.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));
                 Assert.That(actualTipDiameterException?.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));

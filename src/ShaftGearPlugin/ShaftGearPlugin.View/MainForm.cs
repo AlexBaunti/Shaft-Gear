@@ -97,6 +97,7 @@ namespace ShaftGearPlugin.View
             }
         }
 
+        //TODO: RSDN
         /// <summary>
         /// Устанавливает значения по умолчанию.
         /// </summary>

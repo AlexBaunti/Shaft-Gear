@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 namespace ShaftGearPlugin.Model
 {
+    //TODO: RSDN
     public class ShaftGearParameters
     {
         /// <summary>
@@ -71,36 +72,44 @@ namespace ShaftGearPlugin.Model
                 case ShaftGearParametersType.ConnectorDiameter:
                 {
                     _parameters.TryGetValue(ShaftGearParametersType.BaseDiameter, out var parameter);
+                    //TODO: const?
                     if (value - parameter.Value < 5)
                     {
-                        throw new ArgumentOutOfRangeException("Connector Diameter Must Be at Least 5mm More Base Diameter");
+                            //TODO: RSDN
+                            throw new ArgumentOutOfRangeException("Connector Diameter Must Be at Least 5mm More Base Diameter");
                     }
                     break;
                 }
                 case ShaftGearParametersType.BaseDiameter:
                 {
+                        //TODO: const?
                     _parameters.TryGetValue(ShaftGearParametersType.ConnectorDiameter, out var parameter);
                     if (parameter.Value - value < 5)
                     {
-                        throw new ArgumentOutOfRangeException("Base Diameter Must Be at Least 5mm Less Connector Diameter");
+                            //TODO: RSDN
+                            throw new ArgumentOutOfRangeException("Base Diameter Must Be at Least 5mm Less Connector Diameter");
                     }
                     break;
                 }
                 case ShaftGearParametersType.TipDiameter:
                 {
+                        //TODO: const?
                     _parameters.TryGetValue(ShaftGearParametersType.TipLength, out var parameter);
                     if (parameter.Value - value < 10)
                     {
-                        throw new ArgumentOutOfRangeException("Tip Diameter Must Be at Least 10mm Less Tip Length");
+                            //TODO: RSDN
+                            throw new ArgumentOutOfRangeException("Tip Diameter Must Be at Least 10mm Less Tip Length");
                     }
                     break;
                 }
                 case ShaftGearParametersType.TipLength:
                 {
+                        //TODO: const?
                     _parameters.TryGetValue(ShaftGearParametersType.TipDiameter, out var parameter);
                     if (value - parameter.Value < 10)
                     {
-                        throw new ArgumentOutOfRangeException("Tip Length Must Be at Least 10mm More Tip Diameter");
+                            //TODO: RSDN
+                            throw new ArgumentOutOfRangeException("Tip Length Must Be at Least 10mm More Tip Diameter");
                     }
                     break;
                 }
