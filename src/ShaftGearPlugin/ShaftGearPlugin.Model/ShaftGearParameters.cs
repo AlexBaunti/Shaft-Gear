@@ -26,7 +26,7 @@ namespace ShaftGearPlugin.Model
                 { ShaftGearParametersType.BaseDiameter, new ShaftGearParameter(90, 80, 100) },
                 { ShaftGearParametersType.TipDiameter, new ShaftGearParameter(38, 20, 55) },
                 { ShaftGearParametersType.TipLength, new ShaftGearParameter(50, 30, 75) },
-                { ShaftGearParametersType.RotationAngle, new ShaftGearParameter(30, 10, 45) },
+                { ShaftGearParametersType.RotationAngle, new ShaftGearParameter(25, 0, 40) },
             };
         }
 
@@ -117,7 +117,7 @@ namespace ShaftGearPlugin.Model
                 }
                 default:
                 {
-                        return;
+                    return;
                 }
             }
         }
