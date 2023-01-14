@@ -83,11 +83,14 @@ namespace ShaftGearPlugin.UnitTests
 
             Assert.Multiple(() =>
             {
-                //TODO: RSDN
-                Assert.That(actualConnectorDiameterException?.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));
-                Assert.That(actualBaseDiameterException?.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));
-                Assert.That(actualTipDiameterException?.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));
-                Assert.That(actualTipLengthException?.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));
+                Assert.That(actualConnectorDiameterException?.GetType(), 
+                    Is.EqualTo(typeof(ArgumentOutOfRangeException)));
+                Assert.That(actualBaseDiameterException?.GetType(), 
+                    Is.EqualTo(typeof(ArgumentOutOfRangeException)));
+                Assert.That(actualTipDiameterException?.GetType(), 
+                    Is.EqualTo(typeof(ArgumentOutOfRangeException)));
+                Assert.That(actualTipLengthException?.GetType(), 
+                    Is.EqualTo(typeof(ArgumentOutOfRangeException)));
             });
         }
     }

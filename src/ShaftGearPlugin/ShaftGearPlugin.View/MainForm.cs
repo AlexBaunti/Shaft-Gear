@@ -97,12 +97,12 @@ namespace ShaftGearPlugin.View
             }
         }
 
-        //TODO: RSDN
         /// <summary>
         /// Устанавливает значения по умолчанию.
         /// </summary>
         private void SetDefaultValues(double GearWidthValue, double GearDiameterValue,
-            double ConnectorDiameterValue, double BaseDiameterValue, double TipDiameterValue, double TipLengthValue, double RotationAngleValue)
+            double ConnectorDiameterValue, double BaseDiameterValue, double TipDiameterValue, 
+            double TipLengthValue, double RotationAngleValue)
         {
             _parameters.SetParameterValue(ShaftGearParametersType.GearWidth, GearWidthValue);
             _parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, GearDiameterValue);

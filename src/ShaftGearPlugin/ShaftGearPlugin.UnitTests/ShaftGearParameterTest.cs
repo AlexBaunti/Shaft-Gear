@@ -25,8 +25,8 @@ namespace ShaftGearPlugin.UnitTests
             const double maxValue = 50;
             const double value = 25;
 
-            //TODO: RSDN
-            var actual = Assert.Throws<ArgumentOutOfRangeException>(() => new ShaftGearParameter(value, minValue, maxValue));
+            var actual = Assert.Throws<ArgumentOutOfRangeException>
+                (() => new ShaftGearParameter(value, minValue, maxValue));
             var expected = $"Value Can Be Only Between {minValue} And {maxValue}";
 
             Assert.That(actual?.ParamName, Is.EqualTo(expected));
@@ -39,8 +39,8 @@ namespace ShaftGearPlugin.UnitTests
             const double maxValue = 50;
             const double value = 60;
 
-            //TODO: RSDN
-            var actual = Assert.Throws<ArgumentOutOfRangeException>(() => new ShaftGearParameter(value, minValue, maxValue));
+            var actual = Assert.Throws<ArgumentOutOfRangeException>
+                (() => new ShaftGearParameter(value, minValue, maxValue));
             var expected = $"Value Can Be Only Between {minValue} And {maxValue}";
 
             Assert.That(actual?.GetType(), Is.EqualTo(typeof(ArgumentOutOfRangeException)));

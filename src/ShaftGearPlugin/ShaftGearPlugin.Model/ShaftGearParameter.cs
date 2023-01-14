@@ -2,7 +2,9 @@
 
 namespace ShaftGearPlugin.Model
 {
-    //TODO: RSDN
+    /// <summary>
+    /// Класс параметра вал-шестерни.
+    /// </summary>
     public class ShaftGearParameter
     {
         /// <summary>
@@ -30,8 +32,8 @@ namespace ShaftGearPlugin.Model
             {
                 if (IsRangeOut(value))
                 {
-                    //TODO: RSDN
-                    throw new ArgumentOutOfRangeException($"Value Can Be Only Between {_minValue} And {_maxValue}");
+                    throw new ArgumentOutOfRangeException
+                        ($"Value Can Be Only Between {_minValue} And {_maxValue}");
                 }
                 _value = value;
             }
