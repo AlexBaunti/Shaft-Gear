@@ -72,7 +72,7 @@ namespace ShaftGearPlugin.Wrapper
 
             // Построение среднего эскиза шестерни. 
 
-            points = MatricesWorking.RotatePoint(points, rotationAngle / 2);
+            points = MatricesWorking.RotatePoint(points, rotationAngle / 2.4);
             points = MatricesWorking.ChangeScale(points, 1.4);
             _wrapper.CreatePolyline(points, gearWidth / 2);
 

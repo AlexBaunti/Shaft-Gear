@@ -148,7 +148,7 @@ namespace ShaftGearPlugin.View
         /// <param name="e"></param>
         private void MaxSizeButton_Click(object sender, EventArgs e)
         {
-            SetDefaultValues(200, 120, 105, 100, 55, 75, 40);
+            SetDefaultValues(200, 120, 105, 100, 55, 75, 45);
         }
 
         /// <summary>

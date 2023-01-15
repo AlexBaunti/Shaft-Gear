@@ -116,7 +116,7 @@ namespace ShaftGearPlugin.View
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 15);
             this.label1.TabIndex = 2;
-            this.label1.Text = "0 - 40";
+            this.label1.Text = "0 - 45";
             // 
             // TipLengthSizeLabel
             // 
