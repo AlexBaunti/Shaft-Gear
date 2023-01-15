@@ -14,6 +14,16 @@ namespace ShaftGearPlugin.Model
         private readonly Dictionary<ShaftGearParametersType, ShaftGearParameter> _parameters;
 
         /// <summary>
+        /// Константа зависимости размеров вращательного цилиндра.
+        /// </summary>
+        private const int _tipDependence = 10;
+
+        /// <summary>
+        /// Константа зависимости диаметров вала.
+        /// </summary>
+        private const int _baseDependence = 5;
+
+        /// <summary>
         /// Определение параметров вал-шестерни.
         /// </summary>
         public ShaftGearParameters()
@@ -74,8 +84,7 @@ namespace ShaftGearPlugin.Model
                 case ShaftGearParametersType.ConnectorDiameter:
                 {
                     _parameters.TryGetValue(ShaftGearParametersType.BaseDiameter, out var parameter);
-                    //TODO: const?
-                    if (value - parameter.Value < 5)
+                    if (value - parameter.Value < _baseDependence)
                     {
                             throw new ArgumentOutOfRangeException
                                 ("Connector Diameter Must Be at Least 5mm More Base Diameter");
@@ -84,9 +93,8 @@ namespace ShaftGearPlugin.Model
                 }
                 case ShaftGearParametersType.BaseDiameter:
                 {
-                        //TODO: const?
                     _parameters.TryGetValue(ShaftGearParametersType.ConnectorDiameter, out var parameter);
-                    if (parameter.Value - value < 5)
+                    if (parameter.Value - value < _baseDependence)
                     {
                             throw new ArgumentOutOfRangeException
                                 ("Base Diameter Must Be at Least 5mm Less Connector Diameter");
@@ -95,9 +103,8 @@ namespace ShaftGearPlugin.Model
                 }
                 case ShaftGearParametersType.TipDiameter:
                 {
-                        //TODO: const?
                     _parameters.TryGetValue(ShaftGearParametersType.TipLength, out var parameter);
-                    if (parameter.Value - value < 10)
+                    if (parameter.Value - value < _tipDependence)
                     {
                             throw new ArgumentOutOfRangeException
                                 ("Tip Diameter Must Be at Least 10mm Less Tip Length");
@@ -106,18 +113,13 @@ namespace ShaftGearPlugin.Model
                 }
                 case ShaftGearParametersType.TipLength:
                 {
-                        //TODO: const?
                     _parameters.TryGetValue(ShaftGearParametersType.TipDiameter, out var parameter);
-                    if (value - parameter.Value < 10)
+                    if (value - parameter.Value < _tipDependence)
                     {
                             throw new ArgumentOutOfRangeException
                                 ("Tip Length Must Be at Least 10mm More Tip Diameter");
                     }
                     break;
-                }
-                default:
-                {
-                    return;
                 }
             }
         }

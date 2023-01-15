@@ -7,7 +7,6 @@ namespace ShaftGearPlugin.UnitTests
     [TestFixture]
     public class ShaftGearParametersTest
     {
-        //TODO: убрать
         /// <summary>
         /// Параметры вал-шестерни.
         /// </summary>
@@ -16,28 +15,18 @@ namespace ShaftGearPlugin.UnitTests
         [Test(Description = "Positive Setter Test. Dependent Parameter Values.")]
         public void TestSetDependentParameters_CorrectValues()
         {
-            var expectedGearWidth = _parameters.GetParameterValue(ShaftGearParametersType.GearWidth);
-            var expectedGearDiameter = _parameters.GetParameterValue(ShaftGearParametersType.GearDiameter);
             var expectedConnectorDiameter = _parameters.GetParameterValue(ShaftGearParametersType.ConnectorDiameter);
             var expectedBaseDiameter = _parameters.GetParameterValue(ShaftGearParametersType.BaseDiameter);
             var expectedTipDiameter = _parameters.GetParameterValue(ShaftGearParametersType.TipDiameter);
             var expectedTipLength = _parameters.GetParameterValue(ShaftGearParametersType.TipLength);
-            var expectedRotationAngle = _parameters.GetParameterValue(ShaftGearParametersType.RotationAngle);
 
-            _parameters.SetParameterValue(ShaftGearParametersType.GearWidth, expectedGearWidth);
-            _parameters.SetParameterValue(ShaftGearParametersType.GearDiameter, expectedGearDiameter);
             _parameters.SetParameterValue(ShaftGearParametersType.ConnectorDiameter, expectedConnectorDiameter);
             _parameters.SetParameterValue(ShaftGearParametersType.BaseDiameter, expectedBaseDiameter);
             _parameters.SetParameterValue(ShaftGearParametersType.TipDiameter, expectedTipDiameter);
             _parameters.SetParameterValue(ShaftGearParametersType.TipLength, expectedTipLength);
-            _parameters.SetParameterValue(ShaftGearParametersType.RotationAngle, expectedRotationAngle);
 
             Assert.Multiple(() =>
             {
-                Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.GearWidth),
-                    Is.EqualTo(expectedGearWidth));
-                Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.GearDiameter),
-                    Is.EqualTo(expectedGearDiameter));
                 Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.ConnectorDiameter),
                     Is.EqualTo(expectedConnectorDiameter));
                 Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.BaseDiameter),
@@ -46,8 +35,6 @@ namespace ShaftGearPlugin.UnitTests
                     Is.EqualTo(expectedTipDiameter));
                 Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.TipLength),
                     Is.EqualTo(expectedTipLength));
-                Assert.That(_parameters.GetParameterValue(ShaftGearParametersType.RotationAngle),
-                    Is.EqualTo(expectedRotationAngle));
             });
         }
 
